@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo 'Checking logs for 4xx and 5xx errors...'
                 script {
-                    def logFile = "/var/log/apache2/access.log"
+                    def logFile = "/var/log/apache2/other_vhosts_access.log"
                     sh "sudo grep -E ' (4|5)[0-9]{2} ' ${logFile} || echo 'No errors found yet'"
                 }
             }
